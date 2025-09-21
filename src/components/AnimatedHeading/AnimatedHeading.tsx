@@ -1,0 +1,57 @@
+import { motion } from "framer-motion";
+
+export default function AnimatedHeading({
+  text = "سرعة عالية\nأسرع من الضوء",
+  className = "xl:text-[90px]  md:text-[65px] text-[32px] text-white font-semibold",
+  stagger = 0.2,
+  delay = 0.1,
+}) {
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: stagger,
+        delayChildren: delay,
+      },
+    },
+  };
+
+  const wordVariant = {
+    hidden: { x: -60, opacity: 0 },
+    show: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 50,
+        damping: 40,
+      },
+    },
+  };
+
+  return (
+    <motion.h1
+      dir="rtl"
+      className={`${className} overflow-hidden`}
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
+      {text.split("\n").map((line, li) => (
+        <div key={li} className="block">
+          {line.split(" ").map((word, wi) => (
+            <motion.span
+              key={`${li}-${wi}`}
+              variants={wordVariant}
+              className="inline-block ml-4"
+            >
+              {word}
+            </motion.span>
+          ))}
+        </div>
+      ))}
+    </motion.h1>
+  );
+}
+
+

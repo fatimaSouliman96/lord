@@ -1,0 +1,27 @@
+.rating .swiper {
+  width: 100%;
+  height: 400px;
+  margin-top: 2rem;
+}
+
+.rating .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rating .swiper-pagination-bullet{
+    background-color: transparent;
+    border: 1px solid white;
+    width: 12px;
+    height: 12px;
+}
+.rating .swiper-pagination-bullet-active{
+    background-color: white;
+
+}
+
+
+
