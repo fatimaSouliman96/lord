@@ -51,7 +51,7 @@ export default function Hero() {
 
   return (
 
-    <div className="relative  w-full px-2 md:px-10 lg:px-44 heroSection pt-35 flex xl:flex-row lg:flex-row md:flex-col flex-col lg:items-start items-center  lg:justify-between overflow-hidden" >
+    <div className="relative  w-full px-2  md:px-10 lg:px-44 heroSection pt-35 flex xl:flex-row lg:flex-row md:flex-col flex-col lg:items-start items-center md:items-start  lg:justify-between overflow-hidden" >
       <div className="absolute z-[-1] inset-0 bg-[url(/hero-bg-2.png)] bg-no-repeat bg-cover scale-x-[-1]"></div>
       <div className="flex flex-col gap-15  " >
         <div className="flex flex-col gap-10" >
@@ -62,14 +62,14 @@ export default function Hero() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <button className="w-[226px] text-2xl border-0 py-1.5 px-4.5 font-semibold rounded-[10px]  lg:flex md:block items-center justify-center bg-[linear-gradient(180deg,#ffd15d_-23%,#ff9900_100%)] text-[#357faf]
+            <button className="lg:w-[226px] xl:w-[226px] md:w-full w-full text-2xl border-0 py-1.5 px-4.5 font-semibold rounded-[10px]  lg:flex md:block items-center justify-center bg-[linear-gradient(180deg,#ffd15d_-23%,#ff9900_100%)] text-[#357faf]
             hover:-translate-y-3 hover:shadow-lg transform transition-all duration-1000 " >
               اشترك
             </button>
           </motion.div>
         </div>
 
-        <div className="lg:block md:hidden hidden" >
+        <div className="lg:block md:block hidden md:mx-auto lg:mx-0 xl:mx-0" >
           <p className="text-[#ffffffa1]" >إنترنت غير محدود</p>
           <p className="text-white pr-4">تجربة فريدة</p>
           <PiInfinityBold size={84} color="#ff9900" />
@@ -193,18 +193,19 @@ export default function Hero() {
         <div className="absolute bottom-0 left-1/2 
         lg:-translate-x-[-15%]
         xl:-translate-x-[-50%]
-         w-[260px] lg:block md:hidden hidden ">
+        translate-x-[-40%]
+         w-[260px] lg:block md:block hidden ">
           <div className="absolute bottom-0 left-0 w-full">
             <img src="/scroll-down.png" alt="" />
           </div>
 
-          <div onClick={() => scrollDown(100)} className=" flex-col lg:flex md:hidden hidden ">
-            <span className=" text-center mt-44 lg:block md:hidden hidden text-sm text-gray-600 absolute bottom-[0.5rem] left-1/2 -translate-x-1/2">
+          <div onClick={() => scrollDown(100)} className=" flex-col lg:flex md:flex hidden ">
+            <span className=" text-center mt-44 lg:block md:block hidden text-sm text-gray-600 absolute bottom-[0.5rem] left-1/2 -translate-x-1/2">
               Aşağı kaydır
             </span>
             <a
               href="#feature-area"
-              className="mouse-scroll-btn lg:inline-block md:hidden hidden  w-4 h-[25px] border-2 border-[#5F6168] rounded-[30px] outline-none absolute left-1/2 -translate-x-1/2 bottom-[2rem] z-[5]"
+              className="mouse-scroll-btn lg:inline-block md:inline-block hidden  w-4 h-[25px] border-2 border-[#5F6168] rounded-[30px] outline-none absolute left-1/2 -translate-x-1/2 bottom-[2rem] z-[5]"
             ></a>
 
           </div>

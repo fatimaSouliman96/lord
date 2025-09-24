@@ -20,7 +20,7 @@ function App() {
 
   return (
 
-    <div dir='rtl'  >
+    <div dir='rtl' className='relative'  >
       <NavBar />
       <Home />
       <Footer />

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function AnimatedHeading({
   text = "سرعة عالية\nأسرع من الضوء",
-  className = "xl:text-[90px]  md:text-[65px] text-[32px] text-white font-semibold",
+  className = "xl:text-[90px] md:text-[65px] text-[32px] text-white font-semibold",
   stagger = 0.2,
   delay = 0.1,
 }) {
@@ -38,7 +38,7 @@ export default function AnimatedHeading({
       animate="show"
     >
       {text.split("\n").map((line, li) => (
-        <div key={li} className="block">
+        <span key={li} className="whitespace-nowrap block md:inline">
           {line.split(" ").map((word, wi) => (
             <motion.span
               key={`${li}-${wi}`}
@@ -48,10 +48,8 @@ export default function AnimatedHeading({
               {word}
             </motion.span>
           ))}
-        </div>
+        </span>
       ))}
     </motion.h1>
   );
 }
-
-

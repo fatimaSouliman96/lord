@@ -7,7 +7,7 @@ type RegionData = {
   name?: string;
 };
 
-const highlightedRegions = new Set(["sy-ha", "sy-rd", "sy-hm", "sy-la"]);
+const highlightedRegions = new Set(["sy-id", "sy-hi", "sy-rd", "sy-hm", "sy-la", "sy-ta"]);
 
 export default function SyriaMap({
   svgUrl = "/syria.svg",
@@ -44,23 +44,24 @@ export default function SyriaMap({
         svg.style.width = "100%";
         svg.style.height = "auto";
         svg.style.maxWidth = "1000px";
-        svg.style.translate= "15%"
+        svg.style.translate = "15%"
 
         Array.from(svg.querySelectorAll<SVGElement>("path, g, polygon, rect, circle")).forEach((el) => {
           el.style.pointerEvents = "all";
-
+          el.setAttribute("stroke", "#272525");
+          el.setAttribute("stroke-width", "1");
           const id = el.id.toLowerCase();
-          if (highlightedRegions.has(id)) {
-            el.setAttribute("fill", "#ff9900");
-          } else {
-            el.setAttribute("fill", "#374151");
-          }
+
+          // اللون الأساسي لكل منطقة
+          const baseFill = highlightedRegions.has(id) ? "#ff9900" : "#374151";
+          el.setAttribute("fill", baseFill);
 
           el.addEventListener("mouseenter", (e) => {
             const target = e.currentTarget as SVGElement;
-            if (!highlightedRegions.has(target.id.toLowerCase())) {
-              target.setAttribute("fill", "#000000");
-            }
+            // زود طبقة ظل غامق فوق اللون الأصلي
+            target.style.filter = "brightness(0.7)"; // يخلي اللون أغمق مع بقاء اللون الأساسي
+            target.style.transition = "filter 0.2s ease"; // حركة ناعمة
+
             const name =
               target.getAttribute("data-name") ||
               target.id ||
@@ -76,13 +77,11 @@ export default function SyriaMap({
 
           el.addEventListener("mouseleave", (e) => {
             const target = e.currentTarget as SVGElement;
-            if (highlightedRegions.has(target.id.toLowerCase())) {
-              target.setAttribute("fill", "#ff9900");
-            } else {
-              target.setAttribute("fill", "#374151");
-            }
+            // رجع اللون الأساسي (بإزالة الفلتر فقط)
+            target.style.filter = "none";
             setTooltip(null);
           });
+
 
           el.addEventListener("click", (e) => {
             e.stopPropagation();

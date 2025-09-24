@@ -2,6 +2,16 @@ import RatedShape from '../rateShape/RatedShape'
 import SyriaMap from '../syriaMap/SyriaMap'
 
 export default function Map() {
+    const array = [1, 2, 3, 4];
+
+    // 0 + 1 + 2 + 3 + 4
+    const initialValue = 1;
+    const sumWithInitial = array.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        initialValue,
+    );
+
+    console.log(sumWithInitial);
     return (
         <div className="
         xl:mt-44
