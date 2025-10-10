@@ -12,7 +12,7 @@ export const navLinks =[
         title: "تواصل",
     },
     {
-        link: "",
+        link: "about",
         title: "معلومات عنا",
     }
 ]

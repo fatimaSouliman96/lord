@@ -7,7 +7,7 @@ import Lottie from "lottie-react";
 
 export default function Footer() {
   return (
-    <footer dir="rtl" className="bg-[#eeeef5] text-[#595B62] font-medium ">
+    <footer dir="rtl" className="bg-[#eeeef5] text-[#595B62] font-medium row-start-2">
       {/* tp-footer-area-start */}
       <div className="pt-[80px] ">
 
@@ -52,7 +52,7 @@ export default function Footer() {
           ><div>
               <h4 className="text-lg font-semibold mb-3">من نحن</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="/about" className="hover:underline">تعرّف علينا</a></li>
+                <li><a href="about" className="hover:underline">تعرّف علينا</a></li>
                 <li><a href="/contact" className="hover:underline">تواصل معنا</a></li>
                 <li><a href="#" className="hover:underline">المدوّنة</a></li>
               </ul>
@@ -66,9 +66,9 @@ export default function Footer() {
           > <div>
               <h4 className="text-lg font-semibold pb-4">المساعدة</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="/faq" className="hover:underline">الأسئلة المتكررة</a></li>
-                <li><a href="/testimonials" className="hover:underline">شكاوى المستهلكين</a></li>
-                <li><a href="/kvkk" className="hover:underline">سياسة الخصوصية (KVKK)</a></li>
+                <li><a href="faq" className="hover:underline">الأسئلة المتكررة</a></li>
+                <li><a href="testemonials" className="hover:underline">شكاوى المستهلكين</a></li>
+                <li><a href="kvk" className="hover:underline">سياسة الخصوصية (KVKK)</a></li>
               </ul>
             </div></motion.div>
 

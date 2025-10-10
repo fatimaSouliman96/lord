@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import Footer from './components/footer/Footer';
 import NavBar from './components/navbar/NavBar';
-import Home from './pages/home/Home';
+import { Outlet } from 'react-router-dom';
+
 
 
 
@@ -20,10 +21,12 @@ function App() {
 
   return (
 
-    <div dir='rtl' className='relative'  >
-      <NavBar />
-      <Home />
-      <Footer />
+    <div dir='rtl' className='relative w-full max-w-[100vw] mx-auto'  >
+      <div className='grid grid-cols-1 grid-rows-[auto_auto_auto] ' > 
+        <NavBar />
+        <Outlet />
+        <Footer />
+      </div>
       <div
         className="w-8 h-8 rounded-full flex items-center justify-center border-2 border-[#ffd15d_] pointer-events-none fixed transform -translate-x-1/2 -translate-y-1/2 z-50"
         style={{
