@@ -10,17 +10,20 @@ export default function KvkSection() {
             lg:mt-44
             md:mt-44
             mt-28 
+            lg:flex-row
+            md:flex-row
+            flex-col
             flex justify-between ' >
-            <div className="text-right w-1/2" >
+            <div className="text-right lg:w-1/2 md:w-1/2 w-full" >
                 <h1 className="text-[50px] font-semibold text-black" >
                     نص معلومات <br />
                     المشترك الفردي <br />
-                    والمرشح المشترك ال<br />
-                    فردي في الاتصالات عالية السرعة
+                    والمرشح المشترك <br />
+                    الفردي في الاتصالات  <br/> عالية السرعة 
                 </h1>
             </div>
 
-            <div className="text-right w-1/2" >
+            <div className="text-right lg:w-1/2 md:w-1/2 w-full" >
                 <p className="text-sm text-[#5F6168] font-normal leading-6">
                     بصفتنا شركة هاي سبيد تيليكومونيكاسيون ("هاي سبيد")، أعددنا هذه الوثيقة التعريفية لإطلاعكم على طلب اشتراككم في هاي سبيد، والبيانات الشخصية التي سيتم جمعها ومعالجتها ضمن نطاق اشتراككم في حال قبول طلبكم، وذلك وفقًا للقانون رقم 6698 بشأن حماية البيانات الشخصية ("القانون") والتشريعات ذات الصلة.
                     <br />

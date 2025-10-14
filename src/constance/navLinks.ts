@@ -4,11 +4,11 @@ export const navLinks =[
         title: "الصفحة الرئيسية",
     },
     {
-        link: "",
+        link: "campaigns",
         title: "الحملات",
     },
     {
-        link: "",
+        link: "contact",
         title: "تواصل",
     },
     {

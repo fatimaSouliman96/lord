@@ -62,10 +62,10 @@ export default function Hero() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <button className="lg:w-[226px] xl:w-[226px] md:w-full w-full text-2xl border-0 py-1.5 px-4.5 font-semibold rounded-[10px]  lg:flex md:block items-center justify-center bg-[linear-gradient(180deg,#ffd15d_-23%,#ff9900_100%)] text-[#357faf]
-            hover:-translate-y-3 hover:shadow-lg transform transition-all duration-1000 " >
-              اشترك
-            </button>
+            <a href="campaigns" className="lg:w-[226px] xl:w-[226px] md:w-full w-full text-2xl border-0 py-1.5 px-4.5 font-semibold rounded-[10px]  lg:flex md:block items-center justify-center bg-[linear-gradient(180deg,#ffd15d_-23%,#ff9900_100%)] text-[#357faf]
+            hover:-translate-y-3 flex text-center hover:shadow-lg transform transition-all duration-1000 " >
+                اشترك
+            </a>
           </motion.div>
         </div>
 

@@ -55,14 +55,12 @@ export default function NavBar() {
             <nav
                 className={`h-32 transition-all   duration-1000 py-4 max-w-full w-full fixed top-0 z-50 flex items-center 
             px-4 xl:px-24 lg:-px-4 md:px-2
-            md:gap-[70%] gap-[40%]  xl:gap-[4%] 2xl:gap-[7%] lg:gap-[2%] 
-            justify-between lg:justify-center md:justify-center
-
-            ${
-                open ? "" : `${valueScroll >= 1 && valueScroll < 400 ? "transform -translate-y-28" :
-                        `${scrolled ? "bg-white" : "bg-transparent"}`
-                    }`
-            }
+            justify-between 
+            
+            ${open ? "" : `${valueScroll >= 1 && valueScroll < 400 ? "transform -translate-y-28" :
+                        `${scrolled ? "bg-white shadow-md" : "bg-transparent"}`
+                        }`
+                    }
            
            `}
             >
@@ -104,7 +102,9 @@ export default function NavBar() {
                     <p className={`${scrolled ? "text-[#357faf]" : "text-white"} `} >المعاملات عبر الإنترنت</p>
                 </div>
                 <button className="border-0 py-1.5 px-4.5 rounded-[10px]  sm:hidden hidden lg:flex md:hidden items-center justify-center bg-[linear-gradient(180deg,#ffd15d_-23%,#ff9900_100%)] text-[#357faf]" >
-                    اشترك
+                    <a href="campaigns" >
+                        اشترك
+                    </a>
                 </button>
                 {/* Mobile Menu Button */}
                 <div className={`${scrolled ? "bg-[#1c577d]" : "bg-[#00000052]"} lg:hidden xl:hidden w-[45px] h-[45px] justify-center rounded-full  flex gap-2 items-center`}>
@@ -121,7 +121,7 @@ export default function NavBar() {
                 {/* Mobile Menu */}
                 < div
                     ref={menuRef}
-                    className={`${open ? "translate-x-0  transform" : "-translate-x-[540px]  transform"}  fixed top-0 left-0 w-1/2 transition-all flex xl:hidden  duration-1000  h-screen  flex-col items-center  gap-1 lg:hidden 
+                    className={`${open ? "translate-x-0  transform" : "-translate-x-[55rem]  transform"}  fixed top-0 left-0 w-full transition-all flex xl:hidden  duration-1000  h-screen  flex-col items-center  gap-1 lg:hidden 
                      bg-black p-10`}
                 >
                     <IoClose className="self-end text-[#ffffff7a]" size={50} onClick={() => setOpen(!open)} />

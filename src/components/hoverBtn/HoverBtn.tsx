@@ -1,7 +1,7 @@
 const HoverButton: React.FC<{ link: string; text: string }> = ({ link, text }) => (
    <a
         href={link}
-        className="relative inline-block w-[80%] mt-6 rounded-[100px] font-['Poppins'] font-extrabold text-[16px] leading-[61px] text-[#3983b2] text-center tracking-[0.02em] overflow-hidden group transition-colors duration-500"
+        className="relative inline-block w-[100%] mt-6 rounded-[100px] font-['Poppins'] font-extrabold text-[16px] leading-[61px] text-white text-center tracking-[0.02em] overflow-hidden group transition-colors duration-500"
         style={{
           background: '#e6bd49',
           boxShadow: 'inset -2px -2px 2px rgba(7, 13, 29, 0.3)',

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PriceCard from "../PriceCard/PriceCard";// المسار حسب مشروعك
 
 
@@ -24,7 +24,31 @@ interface TabsProps {
 }
 
 const Tabs: React.FC<TabsProps> = ({ tabs }) => {
-  const [activeTab, setActiveTab] = useState<string>(tabs[0].id);
+  const [activeTab, setActiveTab] = useState<string>(
+    localStorage.getItem("city") || ""
+  );
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const newCity = localStorage.getItem("city") || "";
+      setActiveTab(newCity);
+    };
+
+    // الاستماع لتغير localStorage (يشتغل بين التبويبات أو داخل نفس الصفحة إذا استدعيت الحدث)
+    window.addEventListener("storage", handleStorageChange);
+
+    // في حال تغيّر داخل نفس التبويب
+    const originalSetItem = localStorage.setItem;
+    localStorage.setItem = function (key, value) {
+      originalSetItem.apply(this, [key, value]);
+      if (key === "city") handleStorageChange();
+    };
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+      localStorage.setItem = originalSetItem; // رجّع الأصل
+    };
+  }, []);
 
   return (
     <div className="w-full pt-8">
@@ -33,11 +57,10 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            className={`px-10 cursor-pointer py-1 rounded-3xl transition-colors duration-300 font-medium ${
-              activeTab === tab.id
+            className={`px-8 cursor-pointer py-1 rounded-3xl transition-colors duration-300 font-medium ${activeTab === tab.id
                 ? "bg-[#f4bf3d] text-white"
                 : "bg-transparent text-[#3983b2] border border-[#3983b2] hover:bg-blue-100"
-            }`}
+              }`}
             onClick={() => setActiveTab(tab.id)}
           >
             {tab.label}
@@ -52,7 +75,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
             activeTab === tab.id && (
               <div
                 key={tab.id}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
               >
                 {tab.cards.map((card, index) => (
                   <PriceCard key={index} {...card} />

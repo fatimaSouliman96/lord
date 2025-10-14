@@ -7,7 +7,7 @@ type RegionData = {
   name?: string;
 };
 
-const highlightedRegions = new Set(["sy-id", "sy-hi", "sy-rd", "sy-hm", "sy-la", "sy-ta"]);
+const highlightedRegions = new Set(["sy-id", "sy-hi", "sy-rd", "sy-hm", "sy-la", "sy-ta", "sy-hl"]);
 
 export default function SyriaMap({
   svgUrl = "/syria.svg",
@@ -75,6 +75,7 @@ export default function SyriaMap({
             });
           });
 
+      
           el.addEventListener("mouseleave", (e) => {
             const target = e.currentTarget as SVGElement;
             // رجع اللون الأساسي (بإزالة الفلتر فقط)
@@ -95,6 +96,9 @@ export default function SyriaMap({
             };
             if (onRegionClick) onRegionClick(region);
             else console.log("Clicked region:", region);
+
+            localStorage.setItem("city", target.id)
+             if (onRegionClick) onRegionClick(region); // بس نبعث الإشارة للأب
           });
         });
       })

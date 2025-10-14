@@ -10,16 +10,21 @@ export default function AboutSection() {
             lg:mt-44
             md:mt-44
             mt-28 
-            flex justify-between ' >
-            <div className="text-right w-1/2" >
+            flex justify-between 
+            lg:flex-row
+            md:flex-row
+            flex-col
+            ' >
+            <div className="text-right lg:w-1/2 md:w-1/2 w-full" >
                 <span className="text-sm text-[#3983b2] font-medium" >نبذة عنا</span>
-                <h1 className="text-[50px] font-semibold text-black" >سرعة عالية
-                    <br />
-                    مصممة لإبقائك
-                    <br />على اتصال.</h1>
+                <h1 className="text-[50px] font-semibold text-black" >
+                    سرعة عالية
+                    <br className={`lg:block md:block hidden`} />
+                    مصممة لإبقائك <br className={`lg:block md:block hidden`} />  على اتصال.
+                </h1>
             </div>
 
-            <div className="text-right w-1/2" >
+            <div className="text-right lg:w-1/2 md:w-1/2 w-full" >
                 <p className="text-sm text-[#5F6168] font-normal leading-6" >تأسست شركة هاي سبيد عام ٢٠١٦، وهي شركة رائدة في مجال توفير الإنترنت عبر الأقمار الصناعية، حيث تقدم خدمة إنترنت عالية السرعة ومتواصلة في العديد من محافظات تركيا. منذ تأسيسها، دأبنا على الاستثمار في التكنولوجيا وتحسين جودة خدماتنا باستمرار، بهدف توفير أفضل تجربة إنترنت لعملائنا.
                     <br />
                     <br />

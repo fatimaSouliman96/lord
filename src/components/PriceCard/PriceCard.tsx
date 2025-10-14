@@ -47,9 +47,7 @@ const PriceCard: React.FC<PriceCardProps> = ({
         </div>
       </a>
       <hr className="w-[85%] mx-auto text-gray-200 " />
-       <HoverButton text={buttonText} link={link} />
-     
-
+       <HoverButton text={buttonText} link={`apply`} />
     </div>
 
   );

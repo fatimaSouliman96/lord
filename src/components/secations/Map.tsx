@@ -1,7 +1,16 @@
 import RatedShape from '../rateShape/RatedShape'
 import SyriaMap from '../syriaMap/SyriaMap'
 
-export default function Map() {
+type RegionData = {
+  id: string;
+  name?: string;
+};
+
+export default function Map({
+  onRegionClick,
+}: {
+  onRegionClick?: (region: RegionData) => void;
+}) {
     const array = [1, 2, 3, 4];
 
     // 0 + 1 + 2 + 3 + 4
@@ -50,7 +59,7 @@ export default function Map() {
             <h1 className='xl:text-[58px]  md:text-[56px] text-[32px] font-medium text-center text-white' >نطاق خدماتنا</h1>
             <div className="w-full h-auto flex justify-center items-center py-10">
                 <div className="w-full max-w-[1000px] h-auto">
-                    <SyriaMap />
+                    <SyriaMap onRegionClick={onRegionClick} />
                 </div>
             </div>
         </div>
