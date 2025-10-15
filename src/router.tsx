@@ -1,4 +1,3 @@
-import { createBrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
 import { homeRouter } from './pages/home/homeRouter.tsx'
 import { aboutRouter } from './pages/about/aboutRouter.tsx'
@@ -8,9 +7,10 @@ import { kvkRouter } from './pages/kvk/kvkRouter.tsx'
 import { contactRouter } from './pages/contact/contactRouter.tsx'
 import { campaignsRouter } from './pages/Campaigns/campaignsRouter.tsx'
 import { applyRouter } from './pages/Applynow/applyRouter.tsx'
+import { createHashRouter } from 'react-router-dom'
 
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     element: <App />,

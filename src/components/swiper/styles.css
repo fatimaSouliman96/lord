@@ -33,7 +33,7 @@
 @media (max-width: 640px) {
   .hero .swiper {
     margin-right: 30px!important;
-    padding-bottom: 15rem;
+    padding-bottom: 0.2rem;
   }
 
   .hero .swiper-slide img {

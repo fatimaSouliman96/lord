@@ -51,9 +51,9 @@ export default function Hero() {
 
   return (
 
-    <div className="relative  w-full px-2  md:px-10 lg:px-44 heroSection pt-35 flex xl:flex-row lg:flex-row md:flex-col flex-col lg:items-start items-center md:items-start  lg:justify-between overflow-hidden" >
+    <div className="relative  w-full px-2   md:px-10 lg:px-44 heroSection pt-35 flex xl:flex-row lg:flex-row md:flex-col flex-col lg:items-start items-center md:items-start  lg:justify-between overflow-hidden" >
       <div className="absolute z-[-1] inset-0 bg-[url(/hero-bg-2.png)] bg-no-repeat bg-cover scale-x-[-1]"></div>
-      <div className="flex flex-col gap-15  " >
+      <div className="flex flex-col gap-15  pt-10" >
         <div className="flex flex-col gap-10" >
           <AnimatedHeading />
           <motion.div
@@ -69,7 +69,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="lg:block md:block hidden md:mx-auto lg:mx-0 xl:mx-0" >
+        <div className="lg:block md:block mt-8 hidden md:mx-auto lg:mx-0 xl:mx-0" >
           <p className="text-[#ffffffa1]" >إنترنت غير محدود</p>
           <p className="text-white pr-4">تجربة فريدة</p>
           <PiInfinityBold size={84} color="#ff9900" />

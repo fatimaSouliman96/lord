@@ -25,7 +25,7 @@ interface TabsProps {
 
 const Tabs: React.FC<TabsProps> = ({ tabs }) => {
   const [activeTab, setActiveTab] = useState<string>(
-    localStorage.getItem("city") || ""
+    localStorage.getItem("city") || "SY-DI"
   );
 
   useEffect(() => {
