@@ -101,7 +101,7 @@ export default function Hero() {
 
         </div>
       </div>
-      <div className="relative lg:w-[40%] xl:w-[40%] md:w-[90%] md:m-auto w-full lg:ml-26 md:ml-26 ml-0" >
+      <div className="relative z-40 lg:w-[40%] xl:w-[40%] md:w-[90%] md:m-auto w-full lg:ml-26 md:ml-26 ml-0" >
         <motion.div
           viewport={{ once: true, amount: 0.5 }}
           initial={{ x: -100, opacity: 0 }}

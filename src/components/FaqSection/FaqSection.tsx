@@ -30,9 +30,9 @@ const FaqSection = () => {
     ];
 
     return (
-        <section className="max-w-full w-full flex overflow-hidden lg:flex-row md:flex-row flex-col justify-between px-4 md:px-2 lg:px-44 pt-30">
-            <div className="lg:w-[40%] md:w-[40%] w-full " >
-                <div>
+        <section className="max-w-full w-full flex overflow-hidden lg:flex-row md:flex-col flex-col justify-between px-4 md:px-2 lg:px-44 pt-30">
+            <div className="lg:w-[40%] md:w-full w-full flex lg:flex-col md:flex-row flex-row " >
+                <div className="w-[70%] ">
                     <span className="text-base border-b-2 border-[#f4bf3d]" >يدعم</span>
                     <h1 className="xl:text-[58px]  md:text-[56px] text-[32px] font-semibold text-right" >
                         الأسئلة الشائعة
@@ -42,22 +42,23 @@ const FaqSection = () => {
                         للمزيد من المعلومات، تفضل بزيارة صفحة الدعم أو تواصل معنا عبر صفحة "اتصل بنا".
                     </p>
                 </div>
-                <motion.div
-                    style={{
-                        x,
-                       
-                        perspective: 800,
-                        margin: "100px auto",
-                    }}
-                > <img
-                        src="/faq-1.png"
-                        alt="faq illustration"
-                        width={400}
-                        height={400}
-                        className="w-auto mt-16 h-auto"
-                    /></motion.div>
+                <div className="lg:block md:block hidden" >
+                    <motion.div
+                        style={{
+                            x,
 
+                            perspective: 800,
+                            margin: "100px auto",
+                        }}
+                    > <img
+                            src="/faq-1.png"
+                            alt="faq illustration"
+                            width={400}
+                            height={400}
+                            className="w-auto mt-16 h-auto"
+                        /></motion.div>
 
+                </div>
             </div>
             <Accordion items={items} />
 

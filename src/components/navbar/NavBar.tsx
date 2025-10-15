@@ -121,7 +121,7 @@ export default function NavBar() {
                 {/* Mobile Menu */}
                 < div
                     ref={menuRef}
-                    className={`${open ? "translate-x-0  transform" : "-translate-x-[55rem]  transform"}  fixed top-0 left-0 w-full transition-all flex xl:hidden  duration-1000  h-screen  flex-col items-center  gap-1 lg:hidden 
+                    className={`${open ? "translate-x-0  transform" : "-translate-x-[70rem]  transform"}  fixed top-0 left-0 w-full transition-all flex xl:hidden  duration-1000  h-screen  flex-col items-center  gap-1 lg:hidden 
                      bg-black p-10`}
                 >
                     <IoClose className="self-end text-[#ffffff7a]" size={50} onClick={() => setOpen(!open)} />

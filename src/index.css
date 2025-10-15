@@ -1,4 +1,7 @@
-
+*{
+  font-family: "Noto Kufi Arabic", sans-serif;
+  font-optical-sizing: auto;
+}
 
 body{
   margin: 0;

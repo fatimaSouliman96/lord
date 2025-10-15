@@ -37,7 +37,12 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       <h2>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex text-right justify-between items-center py-4 px-5  font-['Poppins'] text-[22px] font-normal leading-[1.3] text-[#5F6368] transition duration-300"
+          className="w-full flex text-right justify-between items-center py-4 px-5  font-['Poppins'] 
+          lg:text-[22px]
+          xl:text-[22px]
+          md:text-[22px]
+          text-[16px]
+          font-normal leading-[1.3] text-[#5F6368] transition duration-300"
         >
           {title}
           <span

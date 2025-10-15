@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
 export default function AnimatedHeading({
-  text = "سرعة عالية\nأسرع من الضوء",
-  className = "xl:text-[90px] md:text-[65px] text-[32px] text-white font-semibold",
+  text = "أسرع من الضوء",
+  className = "xl:text-[90px] md:text-[65px] text-[40px] text-white font-extrabold text-center",
   stagger = 0.2,
   delay = 0.1,
 }) {

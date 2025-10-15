@@ -11,7 +11,7 @@ type AccordionProps = {
 
 const Accordion: React.FC<AccordionProps> = ({ items }) => {
   return (
-    <div className=" lg:w-[50%] md:w-[50%] w-full " id="accordionExample">
+    <div className=" lg:w-[50%] md:w-full w-full " id="accordionExample">
       {items.map((item, index) => (
         <AccordionItem
           key={index}

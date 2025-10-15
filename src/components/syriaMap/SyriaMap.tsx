@@ -7,7 +7,7 @@ type RegionData = {
   name?: string;
 };
 
-const highlightedRegions = new Set(["sy-id", "sy-hi", "sy-rd", "sy-hm", "sy-la", "sy-ta", "sy-hl"]);
+const highlightedRegions = new Set(["sy-id", "sy-hi", "sy-rd", "sy-di", "sy-hm", "sy-la", "sy-ta", "sy-hl"]);
 
 export default function SyriaMap({
   svgUrl = "/syria.svg",
@@ -57,6 +57,8 @@ export default function SyriaMap({
           el.setAttribute("fill", baseFill);
 
           el.addEventListener("mouseenter", (e) => {
+            if (window.matchMedia("(hover: none)").matches) return;
+
             const target = e.currentTarget as SVGElement;
             // زود طبقة ظل غامق فوق اللون الأصلي
             target.style.filter = "brightness(0.7)"; // يخلي اللون أغمق مع بقاء اللون الأساسي
