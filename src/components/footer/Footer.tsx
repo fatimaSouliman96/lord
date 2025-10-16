@@ -4,6 +4,7 @@ import mail from '../../../public/email.json'
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -52,9 +53,9 @@ export default function Footer() {
           ><div>
               <h4 className="text-lg font-semibold mb-3">من نحن</h4>
               <ul className="space-y-2 text-md">
-                <li><a href="/about" className="hover:underline">تعرّف علينا</a></li>
-                <li><a href="/contact" className="hover:underline">تواصل معنا</a></li>
-                <li><a href="#" className="hover:underline">المدوّنة</a></li>
+                <li><Link to="/about" className="hover:underline">تعرّف علينا</Link></li>
+                <li><Link to="/contact" className="hover:underline">تواصل معنا</Link></li>
+                {/* <li><a href="#" className="hover:underline">المدوّنة</a></li> */}
               </ul>
             </div></motion.div>
 
@@ -66,9 +67,9 @@ export default function Footer() {
           > <div>
               <h4 className="text-lg font-semibold pb-4">المساعدة</h4>
               <ul className="space-y-2 text-md">
-                <li><a href="/faq" className="hover:underline">الأسئلة المتكررة</a></li>
-                <li><a href="/testemonials" className="hover:underline">شكاوى المستهلكين</a></li>
-                <li><a href="/kvk" className="hover:underline">سياسة الخصوصية (KVKK)</a></li>
+                <li><Link to="faq" className="hover:underline">الأسئلة المتكررة</Link></li>
+                <li><Link to="testemonials" className="hover:underline">شكاوى المستهلكين</Link></li>
+                {/* <li><a href="/kvk" className="hover:underline">سياسة الخصوصية (KVKK)</a></li> */}
               </ul>
             </div></motion.div>
 

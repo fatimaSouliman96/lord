@@ -66,7 +66,7 @@ export default function NavBar() {
             >
 
 
-                <img src="/logo.svg" className=" w-32 lg:w-44 md:w-32  h-44" alt="lord" />
+                <img src="/new-logo.svg" className=" w-32 lg:w-44 md:w-32  h-44" alt="lord" />
 
 
                 {/* Desktop Menu */}

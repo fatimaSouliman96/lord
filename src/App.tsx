@@ -3,6 +3,7 @@ import './App.css'
 import Footer from './components/footer/Footer';
 import NavBar from './components/navbar/NavBar';
 import { Outlet } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 
 
@@ -22,6 +23,7 @@ function App() {
   return (
 
     <div dir='rtl' className='relative w-full max-w-[100vw] mx-auto'  >
+       <ScrollToTop />
       <div className='grid grid-cols-1 grid-rows-[auto_auto_auto] ' > 
         <NavBar />
         <Outlet />
