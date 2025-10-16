@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 import HoverButton from "../hoverBtn/HoverBtn";
 
 interface PriceCardProps {
-  link: string;
+  link?: string;
   speed: string;
   unlimited: string;
   offerDuration: string;
@@ -14,7 +14,6 @@ interface PriceCardProps {
 }
 
 const PriceCard: React.FC<PriceCardProps> = ({
-  link,
   speed,
   unlimited,
   offerDuration,
@@ -47,7 +46,7 @@ const PriceCard: React.FC<PriceCardProps> = ({
         </div>
       </div>
       <hr className="w-[85%] mx-auto text-gray-200 " />
-       <HoverButton text={buttonText} link={`apply`} />
+       <HoverButton text={buttonText} link="/apply" />
     </div>
 
   );
