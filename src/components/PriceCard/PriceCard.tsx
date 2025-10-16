@@ -24,7 +24,7 @@ const PriceCard: React.FC<PriceCardProps> = ({
 }) => {
   return (
     <div className="relative border border-gray-200 bg-white shadow-[0_1px_0px_rgba(1,16,61,0.1),0_-20px_70px_rgba(1,16,61,0.03)] rounded-[30px] p-[50px_60px] text-center overflow-hidden transition-all duration-500 hover:bg-[#3983b2] group">
-      <a href={link}>
+      <div >
         <div className="mb-5 flex justify-center">
           <div className="w-[100px] h-[100px]">
             <div className="w-full h-full bg-gray-100 rounded-full flex items-center justify-center">
@@ -45,7 +45,7 @@ const PriceCard: React.FC<PriceCardProps> = ({
         <div className="mb-5">
           <h1 className="text-[40px] font-bold text-[#3983b2] group-hover:text-white">{price}</h1>
         </div>
-      </a>
+      </div>
       <hr className="w-[85%] mx-auto text-gray-200 " />
        <HoverButton text={buttonText} link={`apply`} />
     </div>

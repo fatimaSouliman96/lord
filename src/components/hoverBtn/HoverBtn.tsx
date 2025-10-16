@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const HoverButton: React.FC<{ link: string; text: string }> = ({ link, text }) => (
-   <a
-        href={link}
+   <Link
+        to={link}
         className="relative inline-block w-[100%] mt-6 rounded-[100px] font-['Poppins'] font-extrabold text-[16px] leading-[61px] text-white text-center tracking-[0.02em] overflow-hidden group transition-colors duration-500"
         style={{
           background: '#e6bd49',
@@ -17,7 +19,7 @@ const HoverButton: React.FC<{ link: string; text: string }> = ({ link, text }) =
         <span className="relative z-10 group-hover:text-[#e6bd49] transition-colors duration-500">
           {text}
         </span>
-      </a>
+      </Link>
 );
 
 export default HoverButton

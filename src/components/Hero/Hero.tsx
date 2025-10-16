@@ -5,6 +5,7 @@ import { useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaAngleDoubleUp } from "react-icons/fa";
 import AnimatedHeading from "../AnimatedHeading/AnimatedHeading";
+import { Link } from "react-router-dom";
 
 
 export default function Hero() {
@@ -62,10 +63,10 @@ export default function Hero() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <a href="campaigns" className="lg:w-[226px] xl:w-[226px] md:w-full w-full text-2xl border-0 py-1.5 px-4.5 font-semibold rounded-[10px]  lg:flex md:block items-center justify-center bg-[linear-gradient(180deg,#ffd15d_-23%,#ff9900_100%)] text-[#357faf]
+            <Link to="campaigns" className="lg:w-[226px] xl:w-[226px] md:w-full w-full text-2xl border-0 py-1.5 px-4.5 font-semibold rounded-[10px]  lg:flex md:block items-center justify-center bg-[linear-gradient(180deg,#ffd15d_-23%,#ff9900_100%)] text-[#357faf]
             hover:-translate-y-3 flex text-center hover:shadow-lg transform transition-all duration-1000 " >
                 اشترك
-            </a>
+            </Link>
           </motion.div>
         </div>
 

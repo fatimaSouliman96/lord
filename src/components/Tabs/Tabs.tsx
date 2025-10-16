@@ -30,7 +30,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
 
   useEffect(() => {
     const handleStorageChange = () => {
-      const newCity = localStorage.getItem("city") || "";
+      const newCity = localStorage.getItem("city") || "SY-DI";
       setActiveTab(newCity);
     };
 
