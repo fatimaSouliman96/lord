@@ -3,7 +3,7 @@ import HoverButton from "../hoverBtn/HoverBtn";
 
 export default function Crad() {
     return (
-        <div className="relative  h-[357px] border border-gray-200 bg-white shadow-[0_1px_0px_rgba(1,16,61,0.1),0_-20px_70px_rgba(1,16,61,0.03)] overflow-visible rounded-[30px] p-[50px_60px] text-center  transition-all duration-500 hover:bg-[#3983b2] group">
+        <div className="relative  border border-gray-200 bg-white shadow-[0_1px_0px_rgba(1,16,61,0.1),0_-20px_70px_rgba(1,16,61,0.03)] overflow-visible rounded-[30px] p-[50px_60px] text-center  transition-all duration-500 hover:bg-[#3983b2] group">
 
             <div className="w-[40%] transform -translate-x-8 mx-auto bg-black rounded-full h-8 text-white flex items-center justify-center absolute 
             -top-5" >إسنيورت</div>

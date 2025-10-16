@@ -8,7 +8,7 @@ export default function Testemonials() {
         <div className="w-full max-w-full scroll-smooth"  >
             <HeroAbout title="ماذا يقول الناس عن السرعة العالية؟" />
 
-            <div className=' h-fit pb-4 w-full px-4 md:px-2 lg:px-44 pt-40' >
+            <div className='test h-fit pb-4 w-full px-4 md:px-2 lg:px-44 pt-40' >
                 <SwiperRating />
             </div>
 

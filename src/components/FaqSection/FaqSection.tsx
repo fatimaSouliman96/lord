@@ -34,7 +34,7 @@ const FaqSection = () => {
             <div className="lg:w-[40%] md:w-full w-full flex lg:flex-col md:flex-row flex-row " >
                 <div className="w-[70%] ">
                     <span className="text-base border-b-2 border-[#f4bf3d]" >يدعم</span>
-                    <h1 className="xl:text-[58px]  md:text-[56px] text-[32px] font-semibold text-right" >
+                    <h1 className="xl:text-[58px]  md:text-[56px] text-[30px] font-semibold text-right" >
                         الأسئلة الشائعة
                     </h1>
                     <p className="text-lg text-[#5F6368]" >

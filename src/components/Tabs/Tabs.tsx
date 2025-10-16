@@ -53,7 +53,13 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
   return (
     <div className="w-full pt-8">
       {/* Tabs Buttons */}
-      <div className="flex flex-wrap justify-center mb-8 gap-2">
+      <div className="grid 
+      lg:grid-cols-[auto_auto_auto_auto_auto_auto_auto_auto]
+      xl:grid-cols-[auto_auto_auto_auto_auto_auto_auto_auto]
+      md:grid-cols-[auto_auto_auto]
+      grid-cols-[auto_auto]
+
+       justify-center mb-8 gap-2">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -75,7 +81,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
             activeTab === tab.id && (
               <div
                 key={tab.id}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
               >
                 {tab.cards.map((card, index) => (
                   <PriceCard key={index} {...card} />

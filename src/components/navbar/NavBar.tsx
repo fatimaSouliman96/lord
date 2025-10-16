@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { navLinks } from "../../constance/navLinks";
 import { Link } from "react-router-dom";
-import { CiUser } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 
 export default function NavBar() {
@@ -53,24 +52,22 @@ export default function NavBar() {
             <div className={`${open ? "block" : "hidden"} z-50 w-full h-full absolute top-0 left-0 bg-[#00000040]`} >
             </div>
             <nav
-                className={`h-32 transition-all   duration-1000 py-4 max-w-full w-full fixed top-0 z-50 flex items-center 
-            px-4 xl:px-24 lg:-px-4 md:px-2
-            justify-between 
-            
-            ${open ? "" : `${valueScroll >= 1 && valueScroll < 400 ? "transform -translate-y-28" :
+                className={`h-32 transition-all duration-1000 py-4 max-w-full w-full fixed top-0 z-50 flex items-center 
+                            px-4 xl:px-24 lg:-px-4 md:px-2
+                            justify-between 
+                            ${open ? "" : `${valueScroll >= 1 && valueScroll < 400 ? "transform -translate-y-28" :
                         `${scrolled ? "bg-white shadow-md" : "bg-transparent"}`
                         }`
                     }
-           
-           `}
+                        `}
             >
 
 
-                <img src="/new-logo.svg" className=" w-32 lg:w-44 md:w-32  h-44" alt="lord" />
+                <img src="/new-logo.svg" className="w-44 lg:w-64 md:w-56 h-52" alt="lord" />
 
 
                 {/* Desktop Menu */}
-                <ul className="gap-6 sm:hidden hidden lg:flex md:hidden">
+                <ul className="gap-16 pl-16 sm:hidden hidden lg:flex md:hidden">
                     {navLinks.map((ele, index) => {
 
                         return (
@@ -96,15 +93,10 @@ export default function NavBar() {
                         );
                     })}
                 </ul>
-
-                <div className="sm:hidden hidden lg:flex md:hidden" >
-                    <CiUser color={`${scrolled ? "#357faf" : "white"} `} size={30} />
-                    <p className={`${scrolled ? "text-[#357faf]" : "text-white"} `} >المعاملات عبر الإنترنت</p>
-                </div>
                 <Link to={"campaigns"} className="border-0 py-1.5 px-4.5 rounded-[10px]  sm:hidden hidden lg:flex md:hidden items-center justify-center bg-[linear-gradient(180deg,#ffd15d_-23%,#ff9900_100%)] text-[#357faf]" >
-             
-                        اشترك
-                  
+
+                    اشترك
+
                 </Link >
                 {/* Mobile Menu Button */}
                 <div className={`${scrolled ? "bg-[#1c577d]" : "bg-[#00000052]"} lg:hidden xl:hidden w-[45px] h-[45px] justify-center rounded-full  flex gap-2 items-center`}>

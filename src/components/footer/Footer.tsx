@@ -6,7 +6,10 @@ import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import { Link } from 'react-router-dom';
 
+
+
 export default function Footer() {
+
   return (
     <footer dir="rtl" className="bg-[#eeeef5] text-[#595B62] font-medium row-start-2">
       {/* tp-footer-area-start */}
@@ -21,11 +24,8 @@ export default function Footer() {
             transition={{ duration: 1 }}
           >
             <div className='' >
-              <a href="/" aria-label="الرئيسية" className="inline-block pb-4">
-                <img src="/logo.svg" alt="شعار هاي سبيد" width={110} />
-              </a>
 
-              <p className="text-md leading-relaxed">سرعة عالية<br />أسرع من الضوء</p>
+              <p className="text-md leading-relaxed">سرعة عالية أسرع من الضوء</p>
 
               <ul className="mt-2 text-md h-24">
                 <li className="flex items-center gap-2 h-1/2">

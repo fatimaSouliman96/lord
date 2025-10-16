@@ -1,6 +1,6 @@
-.rating .swiper-pagination-bullet{
+.test .rating .swiper-pagination-bullet{
     border: 1px solid #3983b2!important;
 }
-.rating .swiper-pagination-bullet-active{
+.test .rating .swiper-pagination-bullet-active{
     background-color: #3983b2!important;
 }

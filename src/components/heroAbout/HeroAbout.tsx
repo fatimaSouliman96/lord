@@ -23,7 +23,7 @@ const HeroAbout: React.FC<HeroProps> = ({title}) => {
   return (
     <div className="w-full bg-[#3983b2] pt-56 pb-18 overflow-hidden">
       <h1
-        className="text-7xl text-center font-semibold text-white transform transition-transform duration-2000"
+        className="lg:text-7xl md:text-5xl text-3xl text-center font-semibold text-white transform transition-transform duration-2000"
         style={{ transform: `translateY(${offset}px)` }}
       >
         {title}

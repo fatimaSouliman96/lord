@@ -10,7 +10,7 @@ export default function Campaigns() {
 
         <div className="w-full max-w-full scroll-smooth"  >
             <HeroAbout title="حملات واي فاي" />
-            <div className="pt-10 px-28" >
+            <div className="pt-10 px-4 md:px-2 lg:px-28" >
                 <Tabs tabs={tabsData} />
             </div>
             <Box />
