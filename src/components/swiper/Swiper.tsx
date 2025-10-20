@@ -5,10 +5,11 @@ import "swiper/css";
 
 import "./styles.css";
 import { Autoplay, EffectFade } from "swiper/modules";
+import "swiper/css/effect-fade";
 
 export default function SwiperSlides() {
     return (
-        <div className="lg:w-[590px] md:w-[590px] w-full h-[759px] hero" >
+        <div className="lg:w-[590px] md:w-[500px] w-[90%] hero" >
             <Swiper className="mySwiper"
                 effect={'fade'}
                 modules={[Autoplay, EffectFade]} // تفعيل الـ autoplay

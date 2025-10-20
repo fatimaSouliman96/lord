@@ -5,7 +5,7 @@ export const navLinks =[
     },
     {
         link: "campaigns",
-        title: "الحملات",
+        title: "باقات",
     },
     {
         link: "contact",

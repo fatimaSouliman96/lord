@@ -1,5 +1,5 @@
 import Accordion from "../Accordion/Accordion";
-import { motion, useSpring, useScroll, useTransform } from "framer-motion";
+import {  useSpring, useScroll, useTransform } from "framer-motion";
 
 const FaqSection = () => {
     const { scrollYProgress } = useScroll();
@@ -32,9 +32,8 @@ const FaqSection = () => {
     return (
         <section className="max-w-full w-full flex overflow-hidden lg:flex-row md:flex-col flex-col justify-between px-4 md:px-2 lg:px-44 pt-30">
             <div className="lg:w-[40%] md:w-full w-full flex lg:flex-col md:flex-row flex-row " >
-                <div className="w-[70%] ">
-                    <span className="text-base border-b-2 border-[#f4bf3d]" >يدعم</span>
-                    <h1 className="xl:text-[58px]  md:text-[56px] text-[30px] font-semibold text-right" >
+                <div className="w-[70%] px-5">
+                    <h1 className="xl:text-[50px]  md:text-[50px]  lg:text-[38px]  text-[30px] font-semibold text-right" >
                         الأسئلة الشائعة
                     </h1>
                     <p className="text-lg text-[#5F6368]" >
@@ -42,7 +41,7 @@ const FaqSection = () => {
                         للمزيد من المعلومات، تفضل بزيارة صفحة الدعم أو تواصل معنا عبر صفحة "اتصل بنا".
                     </p>
                 </div>
-                <div className="lg:block md:block hidden" >
+                {/* <div className="lg:block md:block hidden" >
                     <motion.div
                         style={{
                             x,
@@ -58,7 +57,7 @@ const FaqSection = () => {
                             className="w-auto mt-16 h-auto"
                         /></motion.div>
 
-                </div>
+                </div> */}
             </div>
             <Accordion items={items} />
 

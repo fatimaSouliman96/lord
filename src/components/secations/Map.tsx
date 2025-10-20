@@ -58,7 +58,7 @@ export default function Map({
             </div>
             <h1 className='xl:text-[58px]  md:text-[56px] text-[32px] font-medium text-center text-white' >نطاق خدماتنا</h1>
             <div className="w-full h-auto flex justify-center items-center py-10">
-                <div className="w-full max-w-[1000px] h-auto">
+                <div className="w-full max-w-[1000px] h-auto ml-16">
                     <SyriaMap onRegionClick={onRegionClick} />
                 </div>
             </div>

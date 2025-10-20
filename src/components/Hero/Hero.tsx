@@ -52,9 +52,9 @@ export default function Hero() {
 
   return (
 
-    <div className="relative  w-full px-2   md:px-10 lg:px-44 heroSection pt-35 flex xl:flex-row lg:flex-row md:flex-col flex-col lg:items-start items-center md:items-start  lg:justify-between overflow-hidden" >
+    <div className="relative w-full px-2 md:px-10 lg:px-44 heroSection pt-35 flex xl:flex-row lg:flex-row md:flex-col flex-col lg:items-start items-center md:items-start  lg:justify-between overflow-hidden" >
       <div className="absolute z-[-1] inset-0 bg-[url(/hero-bg-2.png)] bg-no-repeat bg-cover scale-x-[-1]"></div>
-      <div className="flex flex-col gap-15  pt-10" >
+      <div className="flex flex-col gap-15 pt-10" >
         <div className="flex flex-col gap-10" >
           <AnimatedHeading />
           <motion.div
@@ -65,7 +65,7 @@ export default function Hero() {
           >
             <Link to="campaigns" className="lg:w-[226px] xl:w-[226px] md:w-full w-full text-2xl border-0 py-1.5 px-4.5 font-semibold rounded-[10px]  lg:flex md:block items-center justify-center bg-[linear-gradient(180deg,#ffd15d_-23%,#ff9900_100%)] text-[#357faf]
             hover:-translate-y-3 flex text-center hover:shadow-lg transform transition-all duration-1000 " >
-                اشترك
+              اشترك
             </Link>
           </motion.div>
         </div>
@@ -102,8 +102,9 @@ export default function Hero() {
 
         </div>
       </div>
-      <div className="relative z-40 lg:w-[40%] xl:w-[40%] md:w-[90%] md:m-auto w-full lg:ml-26 md:ml-26 ml-0" >
-        <motion.div
+      <div className="relative h-[759px] z-40 lg:w-[40%] xl:w-[40%] md:w-[90%] md:m-auto w-full lg:ml-26 md:ml-26 ml-0" >
+        <div className="hidden lg:block xl:block md:block">
+          <motion.div
           viewport={{ once: true, amount: 0.5 }}
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -111,6 +112,13 @@ export default function Hero() {
         >
           <SwiperSlides />
         </motion.div>
+        </div>
+
+        <div className="block lg:hidden xl:hidden md:hidden" >
+          <SwiperSlides />
+        </div>
+
+
 
         {/* shape image */}
         <img

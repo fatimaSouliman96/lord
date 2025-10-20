@@ -73,7 +73,7 @@ export default function NavBar() {
                         return (
                             <li
                                 key={index}
-                                className={`group transition-[color] duration-700 ease-in-out text-base font-medium  
+                                className={`group text-lg transition-[color] duration-700 ease-in-out  font-medium  
                             hover:text-[#ffd15d]
                               ${scrolled ? "text-black" : "text-white"}`}
                             >
@@ -93,7 +93,7 @@ export default function NavBar() {
                         );
                     })}
                 </ul>
-                <Link to={"campaigns"} className="border-0 py-1.5 px-4.5 rounded-[10px]  sm:hidden hidden lg:flex md:hidden items-center justify-center bg-[linear-gradient(180deg,#ffd15d_-23%,#ff9900_100%)] text-[#357faf]" >
+                <Link to={"campaigns"} className="border-0 text-lg font-medium py-1.5 px-4.5 rounded-[10px]  sm:hidden hidden lg:flex md:hidden items-center justify-center bg-[linear-gradient(180deg,#ffd15d_-23%,#ff9900_100%)] text-[#357faf]" >
 
                     اشترك
 
@@ -130,16 +130,11 @@ export default function NavBar() {
                                 ${"font-medium border-b-[1px] border-[#ffffff3c] "}`}
                                     onClick={() => setOpen(false)}
                                 >
-                                    <Link to={ele.link}>{ele.title}</Link>
+                                    <Link onClick={() => setOpen(!open)} to={ele.link}>{ele.title}</Link>
                                 </li>
                             );
 
                         })}
-                        <li className={`text-lg py-3.5 w-full transition-all duration-200 
-                                ${scrolled ? "text-white" : "text-white"} 
-                                ${"font-medium border-b-[1px] border-[#ffffff3c]"}`}>
-                            المعاملات عبر الإنترنت
-                        </li>
                         <li className={`text-lg py-3.5 w-full transition-all duration-200 
                                 ${scrolled ? "text-white" : "text-white"} 
                                 ${"font-medium"}`}>

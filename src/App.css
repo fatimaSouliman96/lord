@@ -42,10 +42,16 @@ html {
   scroll-snap-type: y proximity;
   
 }
-
+@media (width <=767px
+  /* 768px */
+) {
+   .heroSection{
+      height: 130vh!important;
+  }
+}
 @media (max-width: 640px){
     .heroSection{
-      height: auto!important;
+      height: 130vh!important;
   }
 }
 

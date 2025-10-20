@@ -25,21 +25,21 @@ export default function Footer() {
           >
             <div className='' >
 
-              <p className="text-md leading-relaxed">سرعة عالية أسرع من الضوء</p>
+              <p className="text-lg leading-relaxed">سرعة عالية أسرع من الضوء</p>
 
-              <ul className="mt-2 text-md h-24">
+              <ul className="mt-2 h-20">
                 <li className="flex items-center gap-2 h-1/2">
 
                   <div className="w-8 bg-transparent icon h-full">
                     <Lottie className="bg-transparent  h-full " animationData={phone} loop={true} />
                   </div>
-                  <a className="text-md" href="http://wa.me/908508503131" target="_blank" rel="noreferrer">+90 850 850 31 31</a>
+                  <a className="text-[20px]" href="http://wa.me/908508503131" target="_blank" rel="noreferrer">+90 850 850 31 31</a>
                 </li>
                 <li className="flex items-center gap-2 h-1/2 ">
                   <div className="w-8 icon  h-full">
                     <Lottie className='h-full' animationData={mail} loop={true} />
                   </div>
-                  <a className="text-md" href="mailto:destek@highspeed.com.tr">destek@highspeed.com.tr</a>
+                  <a className="text-[20px]" href="mailto:destek@highspeed.com.tr">destek@highspeed.com.tr</a>
                 </li>
               </ul>
             </div>
@@ -50,12 +50,11 @@ export default function Footer() {
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.3 }}
-          ><div>
+          ><div className='pr-0 lg:pr-8 xl:pr-8 md:pr-0'>
               <h4 className="text-lg font-semibold mb-3">من نحن</h4>
               <ul className="space-y-2 text-md">
-                <li><Link to="/about" className="hover:underline">تعرّف علينا</Link></li>
-                <li><Link to="/contact" className="hover:underline">تواصل معنا</Link></li>
-                {/* <li><a href="#" className="hover:underline">المدوّنة</a></li> */}
+                <li><Link to="/about" className=" text-lg hover:underline">تعرّف علينا</Link></li>
+                <li><Link to="/contact" className=" text-lg hover:underline">تواصل معنا</Link></li>
               </ul>
             </div></motion.div>
 
@@ -67,9 +66,9 @@ export default function Footer() {
           > <div>
               <h4 className="text-lg font-semibold pb-4">المساعدة</h4>
               <ul className="space-y-2 text-md">
-                <li><Link to="faq" className="hover:underline">الأسئلة المتكررة</Link></li>
-                <li><Link to="testemonials" className="hover:underline">شكاوى المستهلكين</Link></li>
-                {/* <li><a href="/kvk" className="hover:underline">سياسة الخصوصية (KVKK)</a></li> */}
+                <li><Link to="faq" className=" text-lg hover:underline">الأسئلة المتكررة</Link></li>
+                <li><Link to="testemonials" className=" text-lg hover:underline">شكاوى المستهلكين</Link></li>
+               
               </ul>
             </div></motion.div>
 
