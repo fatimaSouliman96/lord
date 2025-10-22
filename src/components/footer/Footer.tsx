@@ -1,9 +1,7 @@
 
-import phone from '../../../public/Phone.json'
-import mail from '../../../public/email.json'
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaPhoneVolume } from "react-icons/fa";
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
+import { CiMail } from "react-icons/ci";
 import { Link } from 'react-router-dom';
 
 
@@ -28,17 +26,12 @@ export default function Footer() {
               <p className="text-lg leading-relaxed">سرعة عالية أسرع من الضوء</p>
 
               <ul className="mt-2 h-20">
-                <li className="flex items-center gap-2 h-1/2">
-
-                  <div className="w-8 bg-transparent icon h-full">
-                    <Lottie className="bg-transparent  h-full " animationData={phone} loop={true} />
-                  </div>
+                <li className="flex items-center gap-2 h-1/2"> 
+                    <FaPhoneVolume size={25} color="#4F5055"  />
                   <a className="text-[20px]" href="http://wa.me/908508503131" target="_blank" rel="noreferrer">+90 850 850 31 31</a>
                 </li>
                 <li className="flex items-center gap-2 h-1/2 ">
-                  <div className="w-8 icon  h-full">
-                    <Lottie className='h-full' animationData={mail} loop={true} />
-                  </div>
+                  <CiMail size={25} color="#4F5055"  />
                   <a className="text-[20px]" href="mailto:destek@highspeed.com.tr">destek@highspeed.com.tr</a>
                 </li>
               </ul>

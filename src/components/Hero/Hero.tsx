@@ -144,7 +144,7 @@ export default function Hero() {
             }}
           >
             <img
-              src="/image_02.png"
+              src="/hero-img-1.svg"
               alt="parallax"
               draggable="false"
               className="w-full h-full object-cover backdrop-blur-md rounded-[20px]"
@@ -171,8 +171,8 @@ export default function Hero() {
             }}
           >
             <img
-              src="/hero-img-2-3.png"
-              alt="hero-img-2-3"
+              src="/hero-img-2.svg"
+              alt="hero-img-2"
               draggable="false"
               className="w-full h-full object-cover backdrop-blur-md rounded-[20px]"
             />
@@ -193,7 +193,7 @@ export default function Hero() {
               perspective: 800,
               margin: "100px auto",
             }}
-          > <img className="w-full h-full object-cover backdrop-blur-md rounded-[20px] tp-hero-2__sub-img-4" src="/hero-img-2-4.png" alt="" draggable="false" /></motion.div>
+          > <img className="w-full h-full object-cover backdrop-blur-md rounded-[20px] tp-hero-2__sub-img-4" src="/hero-img-3.svg" alt="" draggable="false" /></motion.div>
 
 
         </div>

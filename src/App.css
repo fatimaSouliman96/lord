@@ -51,7 +51,7 @@ html {
 }
 @media (max-width: 640px){
     .heroSection{
-      height: 130vh!important;
+      height: 120vh!important;
   }
 }
 

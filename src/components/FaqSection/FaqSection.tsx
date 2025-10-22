@@ -1,10 +1,9 @@
 import Accordion from "../Accordion/Accordion";
-import {  useSpring, useScroll, useTransform } from "framer-motion";
 
 const FaqSection = () => {
-    const { scrollYProgress } = useScroll();
-    const xRange = useTransform(scrollYProgress, [0, 1], [300, -200]);
-    const x = useSpring(xRange, { stiffness: 50, damping: 50 });
+
+
+
     const items = [
         {
             title: "ما هو الإنترنت عالي السرعة وكيف يعمل؟",
@@ -32,7 +31,7 @@ const FaqSection = () => {
     return (
         <section className="max-w-full w-full flex overflow-hidden lg:flex-row md:flex-col flex-col justify-between px-4 md:px-2 lg:px-44 pt-30">
             <div className="lg:w-[40%] md:w-full w-full flex lg:flex-col md:flex-row flex-row " >
-                <div className="w-[70%] px-5">
+                <div className="lg:w-[70%] xl:w-[70%] md:w-full w-full px-5">
                     <h1 className="xl:text-[50px]  md:text-[50px]  lg:text-[38px]  text-[30px] font-semibold text-right" >
                         الأسئلة الشائعة
                     </h1>

@@ -17,10 +17,13 @@ export default function AboutSection() {
             ' >
             <div className="text-right lg:w-1/2 md:w-1/2 w-full" >
                 <span className="text-sm text-[#3983b2] font-medium" >نبذة عنا</span>
-                <h1 className="text-[50px] font-semibold text-black" >
-                    سرعة عالية
-                    <br className={`lg:block md:block hidden`} />
-                    مصممة لإبقائك <br className={`lg:block md:block hidden`} />  على اتصال.
+                <h1 className="
+                lg:text-[50px]  md:text-[40px] text-[30px] 
+                font-semibold text-black" >
+                  سرعة عالية <br className={`lg:block md:block hidden`} />مصممة لابقائك<br className={`lg:block md:block hidden`} /> على اتصال.
+
+                     
+            
                 </h1>
             </div>
 
