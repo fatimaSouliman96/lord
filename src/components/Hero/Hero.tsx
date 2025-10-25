@@ -8,7 +8,11 @@ import AnimatedHeading from "../AnimatedHeading/AnimatedHeading";
 import { Link } from "react-router-dom";
 
 
-export default function Hero() {
+export default function Hero({
+  onRegionClick,
+}: {
+  onRegionClick?: () => void;
+}) {
   const [visible, setVisible] = useState(false);
 
   // مراقبة السكول
@@ -52,7 +56,7 @@ export default function Hero() {
 
   return (
 
-    <div className="relative w-full px-2 md:px-10 lg:px-44 heroSection pt-35 flex xl:flex-row lg:flex-row md:flex-col flex-col lg:items-start items-center md:items-start  lg:justify-between overflow-hidden" >
+    <div className="relative w-full md:px-10 lg:px-44 heroSection pt-35 flex xl:flex-row lg:flex-row md:flex-col flex-col lg:items-start items-center md:items-start lg:justify-between justify-between overflow-hidden" >
       <div className="absolute z-[-1] inset-0 bg-[url(/hero-bg-2.png)] bg-no-repeat bg-cover scale-x-[-1]"></div>
       <div className="flex flex-col gap-15 pt-10" >
         <div className="flex flex-col gap-10" >
@@ -102,7 +106,7 @@ export default function Hero() {
 
         </div>
       </div>
-      <div className="relative h-[759px] z-40 lg:w-[40%] xl:w-[40%] md:w-[90%] md:m-auto w-full lg:ml-26 md:ml-26 ml-0" >
+      <div className="relative  z-40 lg:w-[40%] xl:w-[40%] md:w-[90%] md:m-auto w-full lg:ml-26 md:ml-26 ml-0" >
         <div className="hidden lg:block xl:block md:block">
           <motion.div
           viewport={{ once: true, amount: 0.5 }}
@@ -199,7 +203,7 @@ export default function Hero() {
         </div>
 
         {/* scroll down */}
-        <div className="absolute bottom-0 left-1/2 
+        <div onClick={onRegionClick} className="absolute bottom-0 left-1/2 
         lg:-translate-x-[-15%]
         xl:-translate-x-[-50%]
         translate-x-[-40%]
@@ -210,10 +214,9 @@ export default function Hero() {
 
           <div onClick={() => scrollDown(100)} className=" flex-col lg:flex md:flex hidden ">
             <span className=" text-center mt-44 lg:block md:block hidden text-sm text-gray-600 absolute bottom-[0.5rem] left-1/2 -translate-x-1/2">
-              Aşağı kaydır
+              عرض الباقات
             </span>
             <a
-              href="#feature-area"
               className="mouse-scroll-btn lg:inline-block md:inline-block hidden  w-4 h-[25px] border-2 border-[#5F6168] rounded-[30px] outline-none absolute left-1/2 -translate-x-1/2 bottom-[2rem] z-[5]"
             ></a>
 

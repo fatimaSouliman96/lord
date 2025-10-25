@@ -42,18 +42,7 @@ html {
   scroll-snap-type: y proximity;
   
 }
-@media (width <=767px
-  /* 768px */
-) {
-   .heroSection{
-      height: 130vh!important;
-  }
-}
-@media (max-width: 640px){
-    .heroSection{
-      height: 120vh!important;
-  }
-}
+
 
 @media (max-width: 768px){
     .map-continar{

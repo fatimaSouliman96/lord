@@ -5,7 +5,12 @@ export default function BundlleDetils() {
 
     return (
         <div  >
-            <h1 className="text-5xl font-semibold text-black" >
+            <h1 className="
+            xl:text-5xl
+            lg:text-5xl
+            md:text-3xl
+            text-2xl
+             font-semibold text-black" >
                 واي فاي إسنيورت
                 24 ميجابت في الثانية
             </h1>

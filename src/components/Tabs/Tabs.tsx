@@ -79,7 +79,7 @@ const Tabs: React.FC<tabs> = ({ tabs }) => {
                 key={city.id}
                 className={`px-8 cursor-pointer py-1 rounded-3xl transition-colors duration-300 font-medium ${
                   activeCity === city.id
-                    ? "bg-[#f4bf3d] text-white"
+                    ? "bg-[#3983b2] text-white"
                     : "bg-transparent text-[#3983b2] border border-[#3983b2] hover:bg-blue-100"
                 }`}
                 onClick={() => setActiveCity(city.id)}

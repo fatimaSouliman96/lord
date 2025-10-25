@@ -23,14 +23,14 @@ export default function Footer() {
           >
             <div className='' >
 
-              <p className="text-lg leading-relaxed">سرعة عالية أسرع من الضوء</p>
+              <p className="text-lg font-extrabold leading-relaxed">سرعة عالية أسرع من الضوء</p>
 
               <ul className="mt-2 h-20">
                 <li className="flex items-center gap-2 h-1/2"> 
                     <FaPhoneVolume size={25} color="#4F5055"  />
-                  <a className="text-[20px]" href="http://wa.me/908508503131" target="_blank" rel="noreferrer">+90 850 850 31 31</a>
+                  <a className="text-[20px]" dir="ltr" href="http://wa.me/908508503131" target="_blank" rel="noreferrer">+90 850 850 31 31</a>
                 </li>
-                <li className="flex items-center gap-2 h-1/2 ">
+                <li className="flex items-center  h-1/2 ">
                   <CiMail size={25} color="#4F5055"  />
                   <a className="text-[20px]" href="mailto:destek@highspeed.com.tr">destek@highspeed.com.tr</a>
                 </li>
@@ -44,7 +44,7 @@ export default function Footer() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.3 }}
           ><div className='pr-0 lg:pr-8 xl:pr-8 md:pr-0'>
-              <h4 className="text-lg font-semibold mb-3">من نحن</h4>
+              <h4 className="text-lg font-extrabold mb-3">من نحن</h4>
               <ul className="space-y-2 text-md">
                 <li><Link to="/about" className=" text-lg hover:underline">تعرّف علينا</Link></li>
                 <li><Link to="/contact" className=" text-lg hover:underline">تواصل معنا</Link></li>
@@ -57,7 +57,7 @@ export default function Footer() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.5 }}
           > <div>
-              <h4 className="text-lg font-semibold pb-4">المساعدة</h4>
+              <h4 className="text-lg font-extrabold pb-4">المساعدة</h4>
               <ul className="space-y-2 text-md">
                 <li><Link to="faq" className=" text-lg hover:underline">الأسئلة المتكررة</Link></li>
                 <li><Link to="testemonials" className=" text-lg hover:underline">شكاوى المستهلكين</Link></li>
@@ -71,7 +71,7 @@ export default function Footer() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.7 }}
           ><div className='pb-10'>
-              <h4 className="text-lg font-semibold pb-4">وسائل التواصل الاجتماعي</h4>
+              <h4 className="text-lg font-extrabold pb-4">وسائل التواصل الاجتماعي</h4>
               <div className="flex items-center gap-4">
                 <a href="https://www.facebook.com/highspeediss" target="_blank" rel="noreferrer" aria-label="فيسبوك" className="text-xl w-[38px] h-[38px] rounded-lg bg-white flex items-center justify-center shadow-md">
                   <FaFacebookF color="#4F5055" size={14} />
@@ -91,7 +91,7 @@ export default function Footer() {
               initial={{ y: 100, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.9 }}
-            >    <p className="text-md font-medium text-[#4188b5]">جميع الحقوق محفوظة ©2025 High Speed</p>
+            >    <p className="text-md font-medium text-[#4188b5]">جميع الحقوق محفوظة ©2025 شركة اللورد لخدمات الانترنت</p>
             </motion.div>
 
           </div>

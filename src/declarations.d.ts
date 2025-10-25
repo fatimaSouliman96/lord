@@ -3,3 +3,4 @@ declare module "swiper/css/pagination";
 declare module "isotope-layout";
 declare module "framer-motion";
 declare module "swiper/css/effect-fade";
+declare module 'react-helmet';
