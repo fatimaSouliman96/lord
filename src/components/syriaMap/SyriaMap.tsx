@@ -7,7 +7,7 @@ type RegionData = {
   name?: string;
 };
 
-const highlightedRegions = new Set(["sy-id", "sy-hi", "sy-rd", "sy-di", "sy-hm", "sy-la", "sy-ta", "sy-hl"]);
+const highlightedRegions = new Set(["sy-id", "sy-rd", "sy-di", "sy-la", "sy-ta"]);
 
 export default function SyriaMap({
   svgUrl = "/syria.svg",

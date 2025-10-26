@@ -2,14 +2,16 @@ import React from "react";
 import Speedometer from '../../../public/Speedometer.json'
 import Lottie from "lottie-react";
 import HoverButton from "../hoverBtn/HoverBtn";
-import type { CardType } from "../../constance/data";
+import type { paackage } from "../../types/types";
 
 interface card {
-  card: CardType
+  card: paackage,
+  city: string
 }
 
 const PriceCard: React.FC<card> = ({
-  card
+  card,
+  city
 }) => {
   return (
     <div className="relative w-full border border-gray-200 bg-white shadow-[0_1px_0px_rgba(1,16,61,0.1),0_-20px_70px_rgba(1,16,61,0.03)] rounded-[30px] p-[50px_60px] text-center overflow-hidden transition-all duration-500 hover:bg-[#3983b2] group">
@@ -25,9 +27,9 @@ const PriceCard: React.FC<card> = ({
         <div className="mb-5">
           <ul className="space-y-2 text-center">
             <li className="font-semibold text-2xl text-[#5f6368] group-hover:text-white">{card.speed}</li>
-            <li className="font-semibold text-2xl text-[#5f6368] group-hover:text-white">{card.unlimited}</li>
-            <li className="font-semibold text-2xl text-[#5f6368] group-hover:text-white">{card.offerDuration}</li>
-            <li className="font-semibold text-xl text-[#e6bd49] group-hover:text-white">{card.city}</li>
+            <li className="font-semibold text-2xl text-[#5f6368] group-hover:text-white">{card.limit}</li>
+            <li className="font-semibold text-2xl text-[#5f6368] group-hover:text-white">{card.duration}</li>
+            <li className="font-semibold text-xl text-[#e6bd49] group-hover:text-white">{city}</li>
           </ul>
         </div>
         <hr className="w-[85%] mx-auto text-gray-200 " />
@@ -36,7 +38,7 @@ const PriceCard: React.FC<card> = ({
         </div>
       </div>
       <hr className="w-[85%] mx-auto text-gray-200 " />
-       <HoverButton text={card.buttonText} link="/apply" />
+       <HoverButton text={"اشترك الآن"} link="/apply" />
     </div>
 
   );

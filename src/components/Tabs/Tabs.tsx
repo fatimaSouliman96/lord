@@ -1,52 +1,61 @@
 import React, { useEffect, useState } from "react";
 import PriceCard from "../PriceCard/PriceCard";
-import type { tabs } from "../../constance/data";
+import type {  city } from "../../types/types";
+import { cityIdMap } from "../../constance/data";
 
 
+interface cities {
+  cities: city[]
+}
 
-
-const Tabs: React.FC<tabs> = ({ tabs }) => {
-  const [activeTab, setActiveTab] = useState<string>(
-    localStorage.getItem("city") || "SY-DI"
-  );
-  const [activeCity, setActiveCity] = useState<string>("");
+const Tabs: React.FC<cities> = ({ cities }) => {
+    const [activeTab, setActiveTab] = useState<number>();
+  const [activeCity, setActiveCity] = useState<number>();
 
   useEffect(() => {
-    // لما يتغير التاب، نخلي أول مدينة هي الافتراضية
-    const tab = tabs.find((t) => t.id === activeTab);
-    if (tab && tab.cities.length > 0) {
-      setActiveCity(tab.cities[0].id);
-    }
+    const handleSelectFromMap = () => {
+      const regionId = localStorage.getItem("city"); // مثال: "sy-di"
+      if (!regionId) return;
 
-    const handleStorageChange = () => {
-      const newCity = localStorage.getItem("city") || "SY-DI";
-      setActiveTab(newCity);
+      const backendId = cityIdMap[regionId.toLowerCase()];
+      if (!backendId) return;
+
+      setActiveTab(backendId);
+
+      const selectedTab = cities.find((c) => c.id === backendId);
+      if (selectedTab && selectedTab.regions.length > 0) {
+        setActiveCity(selectedTab.regions[0].id);
+      }
     };
 
-    window.addEventListener("storage", handleStorageChange);
+    // تشتغل أول مرة مباشرة:
+    handleSelectFromMap();
+
+    // تراقب تغييرات localStorage من خريطة:
+    window.addEventListener("storage", handleSelectFromMap);
 
     const originalSetItem = localStorage.setItem;
     localStorage.setItem = function (key, value) {
       originalSetItem.apply(this, [key, value]);
-      if (key === "city") handleStorageChange();
+      if (key === "city") handleSelectFromMap();
     };
 
     return () => {
-      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("storage", handleSelectFromMap);
       localStorage.setItem = originalSetItem;
     };
-  }, [activeTab, tabs]);
+  }, [cities]);
 
   return (
     <div className="w-full pt-8">
-      {/* Tabs Buttons */}
+
       <div className="grid 
       lg:grid-cols-[auto_auto_auto_auto_auto_auto_auto_auto]
       xl:grid-cols-[auto_auto_auto_auto_auto_auto_auto_auto]
       md:grid-cols-[auto_auto_auto]
       grid-cols-[auto_auto]
       justify-center mb-8 gap-2">
-        {tabs.map((tab) => (
+        {cities.map((tab) => (
           <button
             key={tab.id}
             className={`px-8 cursor-pointer py-1 rounded-3xl transition-colors duration-300 font-medium ${
@@ -56,10 +65,10 @@ const Tabs: React.FC<tabs> = ({ tabs }) => {
             }`}
             onClick={() => {
               setActiveTab(tab.id);
-              if (tab.cities.length > 0) setActiveCity(tab.cities[0].id);
+              if (tab.regions.length > 0) setActiveCity(tab.regions[0].id);
             }}
           >
-            {tab.label}
+            {tab.name}
           </button>
         ))}
       </div>
@@ -71,10 +80,10 @@ const Tabs: React.FC<tabs> = ({ tabs }) => {
       md:grid-cols-[auto_auto_auto]
       grid-cols-[auto_auto]
       justify-center mb-8 gap-2">
-        {tabs
+        {cities
           .filter((tab) => tab.id === activeTab)
           .map((tab) =>
-            tab.cities.map((city) => (
+            tab.regions.map((city) => (
               <button
                 key={city.id}
                 className={`px-8 cursor-pointer py-1 rounded-3xl transition-colors duration-300 font-medium ${
@@ -84,7 +93,7 @@ const Tabs: React.FC<tabs> = ({ tabs }) => {
                 }`}
                 onClick={() => setActiveCity(city.id)}
               >
-                {city.city}
+                {city.name}
               </button>
             ))
           )}
@@ -92,14 +101,14 @@ const Tabs: React.FC<tabs> = ({ tabs }) => {
 
       {/* PriceCards لو حابة تضيفيهم */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-8">
-        {tabs
+        {cities
           .filter((tab) => tab.id === activeTab)
           .flatMap((tab) =>
-            tab.cities
+            tab.regions
               .filter((city) => city.id === activeCity)
               .flatMap((city) =>
-                city.cards.map((card, index) => (
-                  <PriceCard key={index} card={card} />
+                city.packages.map((card, index) => (
+                  <PriceCard key={index} card={card} city={city.name} />
                 ))
               )
           )}

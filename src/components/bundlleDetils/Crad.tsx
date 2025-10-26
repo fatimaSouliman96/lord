@@ -19,7 +19,8 @@ export default function Crad() {
 
 
             <hr className="w-[85%] mx-auto text-gray-200 " />
-            <HoverButton text={"تواصل معنا"} link={`#`} />
+            <HoverButton text={"تواصل معنا"} link={`https://wa.me/963988137791`} />
+
         </div>
     )
 }
