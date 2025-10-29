@@ -1,32 +1,22 @@
+import { useEffect, useState } from "react";
 import Accordion from "../Accordion/Accordion";
+import type { faq } from "../../types/types";
+import { getData } from "../../api/services/getData";
 
 const FaqSection = () => {
 
+     const [fags, setFags] = useState<faq[]>()
+    
+        const fetchData = async () => {
+            const data: faq[] = await getData("show-faqs")
+            setFags(data)
+        }
+        useEffect(() => {
+            fetchData()
+    
+        }, [])
 
 
-    const items = [
-        {
-            title: "ما هو الإنترنت عالي السرعة وكيف يعمل؟",
-            content:
-                "الإنترنت عالي السرعة هو خدمة نوفرها باستخدام تقنية لاسلكية لتقديم اتصال سريع وموثوق للمنازل. يتم إرسال البيانات عبر إشارات لاسلكية.",
-            defaultOpen: true,
-        },
-        {
-            title: "كيف تتم عملية التركيب؟",
-            content:
-                "يقوم فريقنا بتركيب الجهاز واختبار الاتصال للتأكد من جاهزيته. عادةً ما تستغرق عملية التركيب حوالي ساعة واحدة فقط.",
-        },
-        {
-            title: "هل يمكنني استخدام الخدمة في أي مكان؟",
-            content:
-                "نعم، يمكن استخدام الخدمة في أي منطقة ضمن نطاق تغطيتنا. يمكنك التواصل معنا للتحقق من توفر الخدمة في منطقتك.",
-        },
-        {
-            title: "هل توجد عقود طويلة الأمد؟",
-            content:
-                "لا نلزم عملاءنا بعقود طويلة. يمكنك الاشتراك أو الإلغاء متى شئت بسهولة.",
-        },
-    ];
 
     return (
         <section className="max-w-full w-full flex overflow-hidden lg:flex-row md:flex-col flex-col justify-between px-4 md:px-2 lg:px-44 pt-30">
@@ -42,7 +32,7 @@ const FaqSection = () => {
                 </div>
             
             </div>
-            <Accordion items={items} />
+            <Accordion items={fags??[]} />
 
         </section>
     );

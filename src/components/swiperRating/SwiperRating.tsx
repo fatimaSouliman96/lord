@@ -9,8 +9,9 @@ import './styles.css';
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
 import CardRating from '../cardRating/CardRating';
+import type { testimonial } from '../../types/types';
 
-export default function SwiperRating() {
+export default function SwiperRating({ testimonials }: { testimonials: testimonial[] }) {
     return (
         <div className='rating'>
             <Swiper
@@ -20,7 +21,7 @@ export default function SwiperRating() {
                     clickable: true,
                 }}
                 autoplay={{
-                    delay: 1000, // الوقت بين كل سلايد (2.5 ثانية)
+                    delay: 2000, // الوقت بين كل سلايد (2.5 ثانية)
                     disableOnInteraction: false, // يضل شغال حتى لو المستخدم لمس السلايدر
                 }}
                 breakpoints={{
@@ -29,30 +30,18 @@ export default function SwiperRating() {
                     1024: { slidesPerView: 3 },  // lg
                 }}
                 modules={[Pagination, Autoplay]}
-                speed={1400}
+                speed={1700}
                 loop={true}
                 className="mySwiper"
             >
-                <SwiperSlide> <CardRating name="احمد" service="مستخدم فردي عالي السرعة" text="كنت مترددًا في البداية، لكنني الآن سعيدٌ لأنني انتقلتُ إلى السرعة العالية. لا تجمد أثناء مشاهدة الأفلام، ولا مزيد من الانقطاعات في عملي!"
-                /></SwiperSlide>
-                <SwiperSlide> <CardRating name="احمد" service="مستخدم فردي عالي السرعة" text="كنت مترددًا في البداية، لكنني الآن سعيدٌ لأنني انتقلتُ إلى السرعة العالية. لا تجمد أثناء مشاهدة الأفلام، ولا مزيد من الانقطاعات في عملي!"
-                /></SwiperSlide>
-                <SwiperSlide> <CardRating name="احمد" service="مستخدم فردي عالي السرعة" text="كنت مترددًا في البداية، لكنني الآن سعيدٌ لأنني انتقلتُ إلى السرعة العالية. لا تجمد أثناء مشاهدة الأفلام، ولا مزيد من الانقطاعات في عملي!"
-                /></SwiperSlide>
-                <SwiperSlide> <CardRating name="احمد" service="مستخدم فردي عالي السرعة" text="كنت مترددًا في البداية، لكنني الآن سعيدٌ لأنني انتقلتُ إلى السرعة العالية. لا تجمد أثناء مشاهدة الأفلام، ولا مزيد من الانقطاعات في عملي!"
-                /></SwiperSlide>
-                <SwiperSlide> <CardRating name="احمد" service="مستخدم فردي عالي السرعة" text="كنت مترددًا في البداية، لكنني الآن سعيدٌ لأنني انتقلتُ إلى السرعة العالية. لا تجمد أثناء مشاهدة الأفلام، ولا مزيد من الانقطاعات في عملي!"
-                /></SwiperSlide>
-                <SwiperSlide> <CardRating name="احمد" service="مستخدم فردي عالي السرعة" text="كنت مترددًا في البداية، لكنني الآن سعيدٌ لأنني انتقلتُ إلى السرعة العالية. لا تجمد أثناء مشاهدة الأفلام، ولا مزيد من الانقطاعات في عملي!"
-                /></SwiperSlide>
-                <SwiperSlide> <CardRating name="احمد" service="مستخدم فردي عالي السرعة" text="كنت مترددًا في البداية، لكنني الآن سعيدٌ لأنني انتقلتُ إلى السرعة العالية. لا تجمد أثناء مشاهدة الأفلام، ولا مزيد من الانقطاعات في عملي!"
-                /></SwiperSlide>
-                <SwiperSlide> <CardRating name="احمد" service="مستخدم فردي عالي السرعة" text="كنت مترددًا في البداية، لكنني الآن سعيدٌ لأنني انتقلتُ إلى السرعة العالية. لا تجمد أثناء مشاهدة الأفلام، ولا مزيد من الانقطاعات في عملي!"
-                /></SwiperSlide>
-                <SwiperSlide> <CardRating name="احمد" service="مستخدم فردي عالي السرعة" text="كنت مترددًا في البداية، لكنني الآن سعيدٌ لأنني انتقلتُ إلى السرعة العالية. لا تجمد أثناء مشاهدة الأفلام، ولا مزيد من الانقطاعات في عملي!"
-                /></SwiperSlide>
-                <SwiperSlide> <CardRating name="احمد" service="مستخدم فردي عالي السرعة" text="كنت مترددًا في البداية، لكنني الآن سعيدٌ لأنني انتقلتُ إلى السرعة العالية. لا تجمد أثناء مشاهدة الأفلام، ولا مزيد من الانقطاعات في عملي!"
-                /></SwiperSlide>
+                {
+                    testimonials.map(testimonial => {
+                        return <SwiperSlide key={testimonial.id} >
+                            <CardRating name={testimonial.name} service={testimonial.position} text={testimonial.comment} />
+                        </SwiperSlide>
+                    })
+                }
+
 
             </Swiper>
         </div>

@@ -1,13 +1,26 @@
 
+import { useEffect, useState } from "react";
 import Box from "../../components/box/Box";
 import HeroAbout from "../../components/heroAbout/HeroAbout";
 import SwiperRating from "../../components/swiperRating/SwiperRating";
 import './style.css'
 import { Helmet } from 'react-helmet';
+import type { testimonial } from "../../types/types";
+import { getData } from "../../api/services/getData";
 
 
 export default function Testemonials() {
 
+    const [comments, setComments] = useState<testimonial[]>()
+
+    const fetchData = async () => {
+        const data: testimonial[] = await getData("testimonials")
+        setComments(data)
+    }
+    useEffect(() => {
+        fetchData()
+
+    }, [])
     return (
         <>
             <Helmet>
@@ -17,7 +30,7 @@ export default function Testemonials() {
                 <HeroAbout title="ماذا يقول الناس عن السرعة العالية؟" />
 
                 <div className='test h-fit pb-4 w-full px-4 md:px-2 lg:px-44 pt-40' >
-                    <SwiperRating />
+                    <SwiperRating testimonials={comments ?? []} />
                 </div>
 
                 <Box />

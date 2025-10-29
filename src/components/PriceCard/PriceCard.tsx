@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import HoverButton from "../hoverBtn/HoverBtn";
 import type { paackage } from "../../types/types";
 
+
 interface card {
   card: paackage,
   city: string
@@ -13,6 +14,9 @@ const PriceCard: React.FC<card> = ({
   card,
   city
 }) => {
+
+ 
+  const id = card.id
   return (
     <div className="relative w-full border border-gray-200 bg-white shadow-[0_1px_0px_rgba(1,16,61,0.1),0_-20px_70px_rgba(1,16,61,0.03)] rounded-[30px] p-[50px_60px] text-center overflow-hidden transition-all duration-500 hover:bg-[#3983b2] group">
       <div >
@@ -38,7 +42,8 @@ const PriceCard: React.FC<card> = ({
         </div>
       </div>
       <hr className="w-[85%] mx-auto text-gray-200 " />
-       <HoverButton text={"اشترك الآن"} link="/apply" />
+
+      {id && <HoverButton text={"اشترك الآن"} link="/apply" id={id} />}
     </div>
 
   );

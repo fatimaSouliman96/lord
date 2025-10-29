@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PriceCard from "../PriceCard/PriceCard";
-import type {  city } from "../../types/types";
+import type { city } from "../../types/types";
 import { cityIdMap } from "../../constance/data";
 
 
@@ -9,7 +9,7 @@ interface cities {
 }
 
 const Tabs: React.FC<cities> = ({ cities }) => {
-    const [activeTab, setActiveTab] = useState<number>();
+  const [activeTab, setActiveTab] = useState<number>();
   const [activeCity, setActiveCity] = useState<number>();
 
   useEffect(() => {
@@ -58,11 +58,10 @@ const Tabs: React.FC<cities> = ({ cities }) => {
         {cities.map((tab) => (
           <button
             key={tab.id}
-            className={`px-8 cursor-pointer py-1 rounded-3xl transition-colors duration-300 font-medium ${
-              activeTab === tab.id
+            className={`px-8 cursor-pointer py-1 rounded-3xl transition-colors duration-300 font-medium ${activeTab === tab.id
                 ? "bg-[#f4bf3d] text-white"
                 : "bg-transparent text-[#3983b2] border border-[#3983b2] hover:bg-blue-100"
-            }`}
+              }`}
             onClick={() => {
               setActiveTab(tab.id);
               if (tab.regions.length > 0) setActiveCity(tab.regions[0].id);
@@ -86,11 +85,10 @@ const Tabs: React.FC<cities> = ({ cities }) => {
             tab.regions.map((city) => (
               <button
                 key={city.id}
-                className={`px-8 cursor-pointer py-1 rounded-3xl transition-colors duration-300 font-medium ${
-                  activeCity === city.id
+                className={`px-8 cursor-pointer py-1 rounded-3xl transition-colors duration-300 font-medium ${activeCity === city.id
                     ? "bg-[#3983b2] text-white"
                     : "bg-transparent text-[#3983b2] border border-[#3983b2] hover:bg-blue-100"
-                }`}
+                  }`}
                 onClick={() => setActiveCity(city.id)}
               >
                 {city.name}
@@ -101,7 +99,7 @@ const Tabs: React.FC<cities> = ({ cities }) => {
 
       {/* PriceCards لو حابة تضيفيهم */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-8">
-        {cities
+        {cities&&cities
           .filter((tab) => tab.id === activeTab)
           .flatMap((tab) =>
             tab.regions

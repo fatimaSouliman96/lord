@@ -7,7 +7,7 @@ import ExpSecation from "../../components/secations/ExpSecation";
 import Map from "../../components/secations/Map";
 import Rating from "../../components/secations/Rating";
 import { Helmet } from 'react-helmet';
-import { getData } from "../../api/services/getData";
+
 
 export default function HomePage() {
   const bundlesRef = useRef<HTMLDivElement | null>(null);

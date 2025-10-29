@@ -1,22 +1,38 @@
 
+import { useEffect, useState } from "react";
 import BundlleDetils from "../../components/bundlleDetils/BundlleDetils";
 import Crad from "../../components/bundlleDetils/Crad";
 import PersonCard from "../../components/personCard/PersonCard";
 import { Helmet } from 'react-helmet';
+import type {  showPackege } from "../../types/types";
+import { useLocation } from "react-router-dom";
+import { getDataById } from "../../api/services/getDataById";
 
 
 
 export default function ApplyPage() {
+  const location = useLocation()
 
-    return (
-        <>
-            <Helmet>
-                <title>اللورد لخدمات الانترنت | المزود</title>
-            </Helmet>
-            <div className="w-full max-w-full scroll-smooth pb-18"  >
-                <div className="w-full bg-[#3983b2] h-32" >
-                </div>
-                <div className="
+  const [info, setInfo] = useState<showPackege>()
+
+  const fetchData = async () => {
+    const data: showPackege = await getDataById("show-package", location.state.id)
+    setInfo(data)
+    console.log(data.provider)
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  return (
+    <>
+      <Helmet>
+        <title>اللورد لخدمات الانترنت | المزود</title>
+      </Helmet>
+      <div className="w-full max-w-full scroll-smooth pb-18"  >
+        <div className="w-full bg-[#3983b2] h-32" >
+        </div>
+        {info ? <div className="
             lg:w-[80%]
             xl:w-[80%]
             md:w-[80%]
@@ -27,11 +43,13 @@ export default function ApplyPage() {
             md:px-8
             px-4
             h-fit items-center">
-                    <Crad />
-                    <BundlleDetils />
-                    <PersonCard />
-                </div>
-            </div>
-        </>
-    )
+          <Crad info={info} />
+          <BundlleDetils info={info.provider} />
+          <PersonCard img={info.provider.image} />
+        </div> :
+          <div className="w-full h-full m-auto" >يتم نحميل البيانات</div>
+        }
+      </div>
+    </>
+  )
 }

@@ -40,9 +40,6 @@ export type testimonial = {
     updated_at: string;
 }
 
-export type testimonials = {
-    testimonials: testimonial[]
-}
 
 export type branch = {
     address: string;
@@ -54,26 +51,38 @@ export type branch = {
     updated_at: string;
 }
 
-export type branches = {
-    branches: branch[]
-}
 
-export  type faq = {
-  id: number;
-  question: string;
-  answer: string;
-  created_at: string; 
-  updated_at: string; 
+export type faq = {
+    id: number;
+    question: string;
+    answer: string;
+    created_at: string;
+    updated_at: string;
 };
 
-export type faqs = {
-    faqs: faq[]
+
+export type packegeInfo = {
+    id: number;
+    title: string;
+    description: string;
+    created_at: string;
+    updated_at: string;
+};
+
+export type provider = {
+    id: number,
+    name: string,
+    address: string,
+    phone: string,
+    description: string,
+    image: string,
+    package_id: number,
+    created_at: string,
+    updated_at: string
 }
 
-export type CompanyInfo = {
-  id: number;
-  title: string;
-  description: string;
-  created_at: string; 
-  updated_at: string; 
-};
+export type showPackege = {
+    package: paackage;
+    provider: provider
+}
+

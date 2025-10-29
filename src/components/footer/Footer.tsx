@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function Footer() {
+  
 
   return (
     <footer dir="rtl" className="bg-[#eeeef5] text-[#595B62] font-medium row-start-2">
