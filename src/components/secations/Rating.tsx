@@ -3,13 +3,21 @@ import type { testimonial } from "../../types/types";
 import SwiperRating from "../swiperRating/SwiperRating";
 import { motion } from "framer-motion";
 import { getData } from "../../api/services/getData";
+import { useLoading } from "../LoadingContext/LoadingContext";
 
 export default function Rating() {
     const [comments, setComments] = useState<testimonial[]>()
+    const { startLoading, stopLoading } = useLoading();
 
     const fetchData = async () => {
-        const data: testimonial[] = await getData("testimonials")
-        setComments(data)
+        try {
+            startLoading()
+            const data: testimonial[] = await getData("testimonials")
+            setComments(data)
+        } finally {
+            stopLoading()
+        }
+
     }
     useEffect(() => {
         fetchData()

@@ -1,4 +1,4 @@
-import { services } from "../../constant/services";
+import { services } from "../../constance/services";
 import ServiceCard from "../ServiseCard/ServiceCrad";
 
 

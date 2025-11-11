@@ -1,7 +1,8 @@
-import type { CompanyInfo } from "../../types/types";
+import type { packegeInfo } from "../../types/types";
 
 
-export default function AboutSection({info} : {info: CompanyInfo}) {
+
+export default function AboutSection({info} : {info: packegeInfo}) {
     return (
         <div className='w-full max-w-full 
         lg:px-44

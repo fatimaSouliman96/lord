@@ -2,14 +2,21 @@ import { useEffect, useState } from "react";
 import Accordion from "../Accordion/Accordion";
 import type { faq } from "../../types/types";
 import { getData } from "../../api/services/getData";
+import { useLoading } from "../LoadingContext/LoadingContext";
 
 const FaqSection = () => {
 
      const [fags, setFags] = useState<faq[]>()
+     const { startLoading, stopLoading } = useLoading();
     
         const fetchData = async () => {
-            const data: faq[] = await getData("show-faqs")
+           try{
+            startLoading()
+             const data: faq[] = await getData("show-faqs")
             setFags(data)
+           } finally {
+            stopLoading()
+           }
         }
         useEffect(() => {
             fetchData()

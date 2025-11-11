@@ -7,15 +7,22 @@ import './style.css'
 import { Helmet } from 'react-helmet';
 import type { testimonial } from "../../types/types";
 import { getData } from "../../api/services/getData";
+import { useLoading } from "../../components/LoadingContext/LoadingContext";
 
 
 export default function Testemonials() {
 
     const [comments, setComments] = useState<testimonial[]>()
+    const { startLoading, stopLoading } = useLoading();
 
     const fetchData = async () => {
-        const data: testimonial[] = await getData("testimonials")
-        setComments(data)
+        try {
+            startLoading()
+            const data: testimonial[] = await getData("testimonials")
+            setComments(data)
+        }finally{
+            stopLoading()
+        }
     }
     useEffect(() => {
         fetchData()

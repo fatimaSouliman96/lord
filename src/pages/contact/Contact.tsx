@@ -7,14 +7,22 @@ import HeroAbout from "../../components/heroAbout/HeroAbout";
 import { Helmet } from 'react-helmet';
 import type { branch } from "../../types/types";
 import { getData } from "../../api/services/getData";
+import { useLoading } from "../../components/LoadingContext/LoadingContext";
 
 export default function Contact() {
 
     const [branchs, setBranchs] = useState<branch[]>()
+    const { startLoading, stopLoading } = useLoading();
 
     const fetchData = async () => {
-        const data: branch[] = await getData("show-branches")
-        setBranchs(data)
+
+        try {
+            startLoading()
+            const data: branch[] = await getData("show-branches")
+            setBranchs(data)
+        }finally{
+            stopLoading()
+        }
     }
     useEffect(() => {
         fetchData()

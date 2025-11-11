@@ -2,16 +2,24 @@ import { useEffect, useState } from "react";
 import { getData } from "../../api/services/getData";
 import Tabs from "../Tabs/Tabs";
 import type { city } from "../../types/types";
+import { useLoading } from "../LoadingContext/LoadingContext";
 
 
 
 export default function BundelsSection() {
   const [cities, setCities] = useState<city[]>()
+  const { startLoading, stopLoading } = useLoading();
 
   const fetchData = async () => {
-    const data: city[] = await getData("cities")
-    setCities(data)
-    console.log(data)
+    try {
+      startLoading();
+      const data: city[] = await getData("cities")
+      setCities(data)
+    } finally {
+      stopLoading()
+    }
+
+
   }
   useEffect(() => {
     fetchData()
